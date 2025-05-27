@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,9 +10,30 @@ public class Main {
         students.add(s1);
         students.add(s2);
         students.add(s3);
-        Student studentIWantToFind = new Student("John", "Doe");
-        if (studentIWantToFind.equals(s1)){
+        Student studentIWantToFindAndRemove = new Student("John", "Doe");
+        if (studentIWantToFindAndRemove.equals(s1)) {
             System.out.println("The student is the same");
+        }
+        HashSet<Student> studentSet = new HashSet<>(students);
+        studentSet.add(s1);
+        studentSet.add(s2);
+        studentSet.add(s3);
+        studentSet.add(s1);
+        studentSet.add(s2);
+        studentSet.add(s3);
+        System.out.println(studentSet.size()); //3 because hashset dont accept duplicates, arraylist does
+
+
+
+
+
+
+        boolean works = students.remove(studentIWantToFindAndRemove);
+        if (works){
+            System.out.println("Student removed " + studentIWantToFindAndRemove.toString());
+        }
+        for (Student student : students) {
+            System.out.println(student.toString());
         }
     }
 }
