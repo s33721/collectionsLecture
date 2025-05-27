@@ -25,7 +25,7 @@ public class Main {
         studentSet.add(s3);
         System.out.println(studentSet.size()); //3 because hashset dont accept duplicates, arraylist does
         if (studentSet.contains(studentIWantToFindAndRemove)) ; //faster than in arraylist
-        //hashcode doesnt store in order
+        //hashcode doesn't store in order
         for (Student student : studentSet) {
             System.out.println(student);
         }
