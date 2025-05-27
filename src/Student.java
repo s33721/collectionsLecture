@@ -6,4 +6,14 @@ public class Student {
         this.firstName = firstName;
         this.lastName = lastName;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Student) {
+            Student anotherStudent = (Student) obj;
+            return firstName.equals(anotherStudent.firstName) && lastName.equals(anotherStudent.lastName);
+        }
+
+        return false;
+    }
 }
