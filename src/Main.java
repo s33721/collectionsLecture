@@ -10,6 +10,8 @@ public class Main {
         students.add(s2);
         students.add(s3);
         Student studentIWantToFind = new Student("John", "Doe");
-        if ()
+        if (studentIWantToFind.equals(s1)){
+            System.out.println("The student is the same");
+        }
     }
 }
