@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 
 public class Main {
@@ -22,18 +23,27 @@ public class Main {
         studentSet.add(s2);
         studentSet.add(s3);
         System.out.println(studentSet.size()); //3 because hashset dont accept duplicates, arraylist does
+        if(studentSet.contains(studentIWantToFindAndRemove)); //faster than in arraylist
+        //hashcode doesnt store in order
+        for (Student student : studentSet) {
+            System.out.println(student);
+        }
+        //HashMap
+        HashMap<String, Student> map = new HashMap<>();
+        map.put("s1234", s1);
+        map.put("s4561", s2);
+        map.put("s4562", s3);
+        Student s = map.get("s1234");
 
 
 
-
-
-
+        //experiment
         boolean works = students.remove(studentIWantToFindAndRemove);
         if (works){
             System.out.println("Student removed " + studentIWantToFindAndRemove.toString());
         }
         for (Student student : students) {
-            System.out.println(student.toString());
+            System.out.println(student);
         }
     }
 }
